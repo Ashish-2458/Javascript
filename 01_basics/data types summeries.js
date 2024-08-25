@@ -18,3 +18,7 @@ const myFunction = function() {
 }
 
 console.log(typeof heroes)
+
+// MEMORY TYPE IN JS 
+
+// STACK (premitive), HEAP (non premitive )

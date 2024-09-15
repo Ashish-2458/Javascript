@@ -23,3 +23,5 @@ console.log(jsUser.email)
  }
 
  console.log(jsUser.greeting)
+
+ // ye function wala fir se kar na hai 

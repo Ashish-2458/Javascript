@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom with chai </title>
+</head>
+<body style="background-color: black; color: white;">
+    
+</body>
+
+<script>
+     const createDiv = document.createElement('div')
+     console.log(createDiv);
+     createDiv.className = "main"
+     createDiv.id = Math.round(Math.random() *10 + 1)
+
+     createDiv.setAttribute("title", "generate title")
+     createDiv.style.backgroundColor = "green"
+     createDiv.style.padding = "20px"
+     // createDiv.innerText = "chai aur code "
+     const addText = document.createTextNode("chai aur code ")
+     createDiv.appendChild(addText)
+     createDiv.appendChild(addText)
+     
+</script>
+</html>

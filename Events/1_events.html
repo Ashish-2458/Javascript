@@ -8,12 +8,53 @@
 <body style="background-color: #414141; color: aliceblue;">
     <h2> Amazing Images</h2>
 
-    <ul>
-        <li><img width="200px" id="photoshop" src="image.png" alt="photoshop"</li>
-        <li><img width="200px" id="japan" src="image copy.png" alt=""</li>
+    <ul id="images">
+        <li><img width="200px" id="photoshop" src="image.png" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="image copy.png" alt=""></li>
         <li><img width="200px" id="river" src="image.png" alt=""</li>
-        <li><img width="200px" id="owl" src="image copy.png" alt=""</li>
+        <li><img width="200px" id="owl" src="image copy.png" alt="" ></li>
         <li style="color: aliceblue; background-color: greenyellow;"><a href="https://google.com" id="google">Google</a></li>
+
+         <!--  1st approach kamchalu -->
+           
+        <li><img width="200px" id="owl1" src="image copy.png" alt="" onclick="alert('owl1')"></li>
     </ul>
 </body>
-</html>
+<script>
+
+    document.querySelector('#owl').onclick = function() {
+        alert("owl clicked")
+    } // 2nd approach this approach is good but issme itne functions nhi hai
+
+    document.getElementById('river').addEventListener('click', function(){
+        alert("river clicked  by eventlistner ")
+    })  // 3rd approach this is very good 
+
+    document.getElementById('river').addEventListener('click', function(e){
+        console.log(e)
+    }, false)
+
+    // What to study in event listner  type, timeStamp, currentTarget, defaultPrevented, target, toElement
+    // imp srcElement, currnetTarget 
+    // position related : clientX, clientY, screenX,
+    // altkey, cltkey, shiftkey
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked by latest method that stop other event ");
+        e.stopPropagation()
+    }, )
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.parentNode);
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+       // or
+       // removeIt.parentNode.removeChild(removeIt)  
+    })
+
+</script>
+</html>        
